@@ -17,6 +17,9 @@
       handle NA and NaN values for numeric vectors.
       \item DataFrame::nrows now more accurately mimics R's internal behavior
       (checks the row.names attribute)
+      \item Vectors can now be subset by other IntegerVectors, CharacterVectors
+      and LogicalVetors, and functionality attempts to mimic R subsetting in
+      all nuances.
     }
     \item Changes in Rcpp Attributes
       \itemize{

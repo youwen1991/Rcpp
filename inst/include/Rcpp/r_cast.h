@@ -135,8 +135,18 @@ namespace Rcpp{
 
     } // namespace internal 
 
-    template <int TARGET> SEXP r_cast( SEXP x) { 
-        return (TYPEOF(x)== TARGET) ? x : internal::r_true_cast<TARGET>(x) ; 
+    template <int TARGET> SEXP r_cast(SEXP x) {
+        if (TYPEOF(x) == TARGET) {
+            return x;
+        } else {
+            #ifdef RCPP_WARN_ON_COERCE
+            Rf_warning("coerced object from '%s' to '%s'",
+                CHAR(Rf_type2str(TYPEOF(x))),
+                CHAR(Rf_type2str(TARGET))
+            );
+            #endif
+            return internal::r_true_cast<TARGET>(x);
+        }
     }
 
 } // namespace Rcpp

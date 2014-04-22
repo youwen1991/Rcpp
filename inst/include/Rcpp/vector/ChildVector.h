@@ -61,7 +61,7 @@ class ChildVector : public T {
         T vec = as<T>(wrapped);
         this->set__(vec);
         if (parent != NULL && !Rf_isNull(parent)) {
-            SET_VECTOR_ELT(parent, i, other);
+            SET_VECTOR_ELT(parent, i, vec);
         }
         return *this;
     }

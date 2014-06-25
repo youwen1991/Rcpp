@@ -1,6 +1,6 @@
 2014-06-08  Dirk Eddelbuettel  <edd@debian.org>
 
-        * cleanup: Do not remove 'build/Rcpp.pdf', thanks to hint by Kurt / CRAN
+        * .Rbuildignore: Added 'Rcpp/build/Rcpp.pdf' per request of Uwe / CRAN
 
 2014-06-06  Dirk Eddelbuettel  <edd@debian.org>
 
